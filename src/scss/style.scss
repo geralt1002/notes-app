@@ -1,0 +1,207 @@
+@import './normalize/normalize';
+@import './variables.scss';
+@import './mixin.scss';
+
+//*************GOOGLE_FONTS_IMPORT**************************
+
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=latin-ext');
+
+/*****************ROOT***********************/
+*,
+*::before,
+*::after {
+  font-family: 'PT Mono', monospace;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  outline: none;
+}
+:root {
+  font-size: 12px;
+}
+body {
+  width: 95%;
+  background: $bgbody;
+  margin: auto;
+  color: $fontColor;
+  font-size: 2rem;
+  a {
+    color: $linkColor;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: $visitedLinkColor;
+    }
+  }
+}
+/*****************HEADER***************************/
+.page_header {
+  list-style-position: inside;
+  margin: auto;
+  text-align: center;
+  .none {
+    display: none;
+  }
+  .feedback_input--add {
+    @include feedback;
+  }
+}
+/*****************MAIN*****************************/
+.page_main {
+  background: $bgmain;
+
+  .form_toolbar--grid {
+    background: $orangeMain;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 1rem;
+    .none {
+      display: none;
+    }
+    .input-task {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background: $orangeMain;
+      .input_label--flex {
+        padding: 1.5rem;
+        margin: 0.5rem;
+        border-bottom: solid 0.1rem #fff;
+      }
+      .form_input_element {
+        @include input($bg: false);
+        padding: 1rem;
+        margin: 1.5rem;
+        &:focus {
+          background: $shadowColor;
+          border-bottom: 1px solid #fff;
+        }
+      }
+      .form_input_element::placeholder {
+        color: $placeholderColor;
+        opacity: 1;
+      }
+    }
+    .btn_btn--submit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      border-style: hidden solid hidden solid;
+      border-width: 0.1rem;
+      border-color: #fff;
+      .btn {
+        @include btn;
+      }
+    }
+  }
+  /***************EDITOR***************************/
+  .main_content {
+    display: flex;
+    width: 100%;
+    .container_item-edit {
+      order: 1;
+      width: 100%;
+      .none {
+        display: none;
+      }
+      .btn--view-flex {
+        display: flex;
+        .btn_btn--mdpreview,
+        .btn_btn--mdeditor {
+          @include btn;
+        }
+        .btn_btn--focus {
+          border: 2px solid #fff;
+        }
+      }
+      .form_item-edit {
+        .none {
+          display: none;
+        }
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        .item_list--edit {
+          @include input($bg: true);
+          border-bottom: 1px solid #ffffff;
+          color: $fontColor;
+          font-weight: 600;
+          resize: none;
+          width: 95%;
+          justify-content: flex-end;
+          max-height: 4.5rem;
+          &:focus {
+            scroll-margin: 0;
+            scroll-padding: 0;
+            overflow: none;
+            background: $BGfocus;
+          }
+        }
+        .feedback_input--add {
+          @include feedback;
+        }
+        .item_markdown_content {
+          @include input($bg: true);
+          border: 1px solid #ffffff;
+          width: 95%;
+          resize: none;
+          height: 30rem;
+          font-weight: 600;
+          text-shadow: 0;
+          justify-content: flex-end;
+          &:focus {
+            background: #4f4f4f;
+          }
+        }
+        .item_markdown-preview {
+          @include input($bg: true);
+          width: 95%;
+          padding: 1.2rem;
+          margin: 1.5rem;
+          border-top: 0.1rem solid #ffffff;
+          border-bottom: 0.1rem solid #ffffff;
+          justify-content: flex-end;
+        }
+        .btn_btn--save {
+          @include btn;
+        }
+      }
+    }
+  }
+  .container_todo_list {
+    width: 30%;
+    .todo_list_item {
+      @include marginPadd;
+      .list_item--link {
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+        text-decoration: none;
+        color: $fontColor;
+        .list_item {
+          font-size: $fontSize;
+          background: $orangeMain;
+          display: flex;
+          width: 100%;
+          height: auto;
+          list-style-type: none;
+          text-decoration: none;
+          margin: 0.4rem;
+          border: $orangeMain 0.1rem solid;
+          border-radius: 3rem;
+        }
+        .item_headline {
+          @include marginPadd;
+        }
+      }
+    }
+  }
+}
+.page_footer {
+  width: 100%;
+  text-align: center;
+}
+@import './rwd.scss';

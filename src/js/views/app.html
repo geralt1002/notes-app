@@ -1,0 +1,87 @@
+<header class="page_header" id="header">
+  <div id="feedback" class="feedback_input--add none"></div>
+
+  <h1>Notatnik</h1>
+</header>
+<main class="page_main">
+  <section class="toolbar">
+    <form action="" id="formTodo" class="form_toolbar--grid">
+      <div class="input-task">
+        <label for="formInput" class="input_label--flex"
+          >Dodaj nowe zadanie</label
+        >
+        <input
+          type="text"
+          name="formInput"
+          id="formAddInput"
+          class="form_input_element add_input"
+          placeholder="np. Zadanie 1"
+        />
+      </div>
+      <div class="btn_btn--submit">
+        <button
+          class="btn btn_btn--add"
+          id="formBtn"
+          type="submit btn_for_submit"
+        >
+          Dodaj
+        </button>
+        <button type="button" class="btn btn_btn--remove" id="deleteItem">
+          Usuń
+        </button>
+      </div>
+      <div class="input-task">
+        <label for="formInput" class="input_label--flex"
+          >Wyszukaj zadanie</label
+        >
+        <input
+          type="text"
+          name="formInput"
+          id="searchInput"
+          class="form_input_element search_input"
+          placeholder="np. Zadanie 1"
+        />
+      </div>
+    </form>
+  </section>
+  <section class="main_content">
+    <div class="container_item-edit">
+      <div class="btn--view-flex">
+        <button
+          id="markDownPreviewBtn"
+          class="btn_btn--mdpreview"
+          type="button"
+        >
+          Podgląd
+        </button>
+        <button id="editorPreviewBtn" class="btn_btn--mdeditor" type="button">
+          Edytor
+        </button>
+      </div>
+      <form action="" class="form_item-edit" id="todoFormEdit">
+        <div id="feedback-edit-headline" class="feedback_input--add none"></div>
+        <textarea
+          type="text"
+          id="todoContent"
+          class="item_list--edit"
+          placeholder="Treść notatki..."
+        ></textarea>
+        <textarea
+          class="item_markdown_content"
+          id="todoMarkdownContent"
+          placeholder="Treść notatki..."
+        ></textarea>
+        <div id="todoMarkdownPreview"></div>
+        <button id="saveItem" class="btn_btn--save" type="submit">
+          Zapisz
+        </button>
+      </form>
+    </div>
+    <section class="container_todo_list">
+      <div class="todo_list_item" id="todoList"></div>
+    </section>
+  </section>
+</main>
+<footer class="page_footer">
+  <p>| Krzysztof Umiński | 2019</p>
+</footer>

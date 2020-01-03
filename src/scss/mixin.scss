@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+@mixin btn {
+  background: #d85803;
+  padding: 1rem;
+  margin: 1.5rem;
+  width: 20rem;
+  font-size: $fontSize;
+  color: $fontColor;
+  border: 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  &:hover {
+    background: #ba4b01;
+    border: solid 1px #fff;
+  }
+}
+@mixin input($bg: true) {
+  border: 0;
+  font-size: $fontSize;
+  padding: 1rem;
+  margin: 1.5rem;
+  color: #fff;
+  @if $bg {
+    background: #363636;
+  } @else {
+    background: #ba4b01;
+  }
+}
+@mixin marginPadd {
+  padding: 0.2rem;
+  margin: 1.2rem;
+}
+@mixin feedback {
+  background: #ae0c0c;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  border: 0.1rem #fff solid;
+  font-weight: bold;
+}
+
+/***************RWD_MIXINS******************/
+
+@mixin smallerPhone {
+  @media (min-width: #{$smallerPhone}) and (max-width: #{$mostPhone - 1}) {
+    @content;
+  }
+}
+@mixin mostPhone {
+  @media (min-width: #{$mostPhone}) and (max-width: #{$mostTablets - 1}) {
+    @content;
+  }
+}
+@mixin mostTablets {
+  @media (min-width: #{$mostTablets}) and (max-width: #{$smallerDesktop - 1}) {
+    @content;
+  }
+}
+@mixin smallerDesktop {
+  @media (min-width: #{$smallerDesktop}) and (max-width: #{$largeDevices - 1}) {
+    @content;
+  }
+}
+@mixin largeDevices {
+  @media (min-width: #{$largeDevices}) {
+    @content;
+  }
+}
