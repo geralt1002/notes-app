@@ -1,0 +1,28 @@
+/*****************ROOT***********************/
+*,
+*::before,
+*::after {
+  font-family: 'PT Mono', monospace;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  outline: none;
+}
+:root {
+  font-size: 12px;
+}
+body {
+  width: 95%;
+  background: $bgbody;
+  margin: auto;
+  color: $fontColor;
+  font-size: 2rem;
+  a {
+    color: $linkColor;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: $visitedLinkColor;
+    }
+  }
+}

@@ -3,14 +3,12 @@
     {
       "id": 1,
       "title": "Notatka 1",
-      "body": "# Notatnik Markdown\n\n - kliknij na pole tekstowe\n - napisz coś\n - zapisz\n - dodawaj nowe notatki\n - usuwaj\n\n\n[Poznaj Markdown](https://docs.microsoft.com/pl-pl/contribute/how-to-write-use-markdown)\n",
-      "Date": "18/11/2019 11:00"
+      "body": "# Notatnik Markdown\n\n - kliknij na pole tekstowe\n - napisz coś\n - zapisz\n - dodawaj nowe notatki\n - usuwaj\n\n\n[Poznaj Markdown](https://docs.microsoft.com/pl-pl/contribute/how-to-write-use-markdown)\n"
     },
     {
       "id": 2,
       "title": "Notatka 2",
-      "body": "# Notatka 2",
-      "Date": "18/11/2019 11:00"
+      "body": "# Notatka 2"
     }
   ]
 }

@@ -1,3 +1,3 @@
-import './js/app';
-import './scss/style.scss';
 import './js/polyfills';
+import './js/routing/index';
+import './scss/style.scss';

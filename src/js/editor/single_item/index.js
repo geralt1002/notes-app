@@ -2,18 +2,19 @@ import DOM from '../../dom';
 import * as events from './single_events';
 
 const init = itemToShow => {
-  const itemId = itemToShow.id;
+  const { id } = itemToShow;
 
   DOM().todoContentEl.textContent = itemToShow.title;
   DOM().todoMarkdownContent.textContent = itemToShow.body;
 
-  events.remove(itemId);
+  events.removeItem(id);
 
-  events.ItemSaveAll(itemId);
+  events.itemSave(id);
+  //   events.ItemSaveAll(id);
 
-  events.itemShowPreviewMarkdown();
-  events.itemShowEditorList();
+  events.ShowPreviewMarkdown();
+  events.ShowEditorItem();
 
-  events.settingsKey();
+  events.disableEnterKey();
 };
 export default init;

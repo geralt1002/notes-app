@@ -1,6 +1,5 @@
-// import page from 'page';
 import DOM from '../../dom';
-import * as toolbox from './function';
+import * as toolbox from './add-search-bar';
 import { normalize } from '../../tools';
 
 const generateTodoHTML = (item, currentId) => `
@@ -28,9 +27,8 @@ const init = (items, currentId) => {
   generateTodoList(items, currentId);
 
   toolbox.initSearch(() => generateTodoList(items, currentId));
-
-  toolbox.initAdd(newNote => {
-    items = [...items, newNote];
+  toolbox.initAdd(newItem => {
+    items = [...items, newItem];
 
     generateTodoList(items, currentId);
   });

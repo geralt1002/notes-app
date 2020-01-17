@@ -1,0 +1,28 @@
+.section_note_list {
+  width: 30%;
+  .todo_list_item {
+    @include marginPadd;
+    .list_item--link {
+      display: grid;
+      grid-template-columns: 1fr;
+      list-style-type: none;
+      text-decoration: none;
+      color: $fontColor;
+      .list_item {
+        font-size: $fontSize;
+        background: $orangeMain;
+        display: flex;
+        width: 100%;
+        height: auto;
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0.4rem;
+        border: $orangeMain 0.1rem solid;
+        border-radius: 3rem;
+      }
+      .item_headline {
+        @include marginPadd;
+      }
+    }
+  }
+}

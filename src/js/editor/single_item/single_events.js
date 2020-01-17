@@ -1,108 +1,69 @@
 /* eslint-disable no-sequences */
-import { setTimeout } from 'timers';
-import page from 'page';
-import showdown from 'showdown';
 import DOM from '../../dom';
-import * as todoAction from '../todo_events';
+import showdown from 'showdown';
+import page from 'page';
+import * as client from '../../api-client';
+import setView from './set-view-item';
+import * as failHandler from '../error';
 
 const mdConverter = new showdown.Converter();
 
-// markdown preview
-function showMdPreview() {
-  DOM().todoMdContentPreview.classList.remove('none');
-  DOM().todoMdContentPreview.classList.add('item_markdown-preview');
-  DOM().todoMarkdownContent.classList.add('none');
-  DOM().markdownPreviewBtn.classList.add('btn_btn--focus');
-  DOM().editorPreviewBtn.classList.remove('btn_btn--focus');
-}
-function showList() {
-  console.log('showlist');
-  DOM().todoMdContentPreview.classList.add('none');
-  DOM().todoMdContentPreview.classList.add('item_markdown-preview');
-  DOM().todoMarkdownContent.classList.remove('none');
-  DOM().markdownPreviewBtn.classList.remove('btn_btn--focus');
-  DOM().editorPreviewBtn.classList.add('btn_btn--focus');
-}
-
-export function itemShowPreviewMarkdown() {
+export function ShowPreviewMarkdown(setValueView) {
   DOM().markdownPreviewBtn.addEventListener('click', () => {
     const text = DOM().todoMarkdownContent.value;
     if (text) {
       const html = mdConverter.makeHtml(text);
-      showMdPreview();
+      setView((setValueView = 'MdPreview'));
+      console.log(setValueView);
+
       DOM().todoMdContentPreview.innerHTML = html;
     }
   });
 }
 // list open
 
-export function itemShowEditorList() {
+export function ShowEditorItem(setValueView) {
   DOM().editorPreviewBtn.addEventListener('click', () => {
-    showList();
+    setView((setValueView = 'editorPreview'));
+    console.log(setValueView);
   });
 }
+
 // delete event
 
-export function remove(itemId) {
+export function removeItem(id) {
   DOM().removeBtn.addEventListener('click', () => {
-    todoAction.remove(itemId).then(() => page('/appView'));
+    client.remove(id).then(() => page('/appView'));
   });
 }
 // save event
 
-function itemSave(itemId) {
+export function itemSave(id) {
   DOM().todoFormEdit.addEventListener('submit', e => {
     e.preventDefault();
 
-    const feedbackInnerHTML2 =
-      '<p>Treść zadania jest za długa. Max 12 znaków</p>';
-
     const todoContent = DOM().todoContentEl.value.trim();
+    const todoMDContent = DOM().todoMarkdownContent.value;
 
-    if (todoContent && todoContent.length < 12) {
-      todoAction
-        .save(itemId, todoContent)
-        .then(() => page(`/appView/${itemId}`));
+    if (todoContent && todoContent.length < 12 && todoMDContent) {
+      client
+        .save(id, todoContent, todoMDContent)
+        .then(() => page(`/appView/${id}`));
     } else {
       console.log('błąd - za dluga nazwa');
-
-      setTimeout(() => {
-        DOM().feedbackEditHeadline.classList.remove('none');
-        const { feedbackEditHeadline } = DOM();
-        feedbackEditHeadline.innerHTML = feedbackInnerHTML2;
-      }, 100);
-
-      setTimeout(() => {
-        DOM().feedbackEditHeadline.classList.add('none');
-      }, 5000);
+      failHandler.editItemFailHandler();
     }
   });
 }
 
-function itemSaveMd(itemId) {
-  DOM().todoFormEdit.addEventListener('submit', e => {
-    e.preventDefault();
-    const todoMDContent = DOM().todoMarkdownContent.value;
-    todoAction
-      .saveMD(itemId, todoMDContent)
-      .then(() => page(`/appView/${itemId}`));
-  });
-}
-
-export function ItemSaveAll(itemId) {
-  itemSave(itemId);
-  itemSaveMd(itemId);
-}
-
 // settings Key
 
-export function settingsKey() {
+export function disableEnterKey() {
   const headlineTextarea = DOM().todoContentEl;
   headlineTextarea.addEventListener('keydown', e => {
-    if (e.keyCode == 13 && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       // alert('ok');
-      return false;
     }
   });
 }

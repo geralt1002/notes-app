@@ -1,0 +1,11 @@
+.page_header {
+  list-style-position: inside;
+  margin: auto;
+  text-align: center;
+  .none {
+    display: none;
+  }
+  .feedback_input--add {
+    @include feedback;
+  }
+}

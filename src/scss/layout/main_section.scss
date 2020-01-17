@@ -1,0 +1,15 @@
+.page_main {
+  background: $bgmain;
+  /***************EDITOR***************************/
+  .main_content {
+    display: flex;
+    width: 100%;
+    .container_note_app {
+      order: 1;
+      width: 100%;
+      .none {
+        display: none;
+      }
+    }
+  }
+}

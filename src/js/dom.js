@@ -4,16 +4,15 @@ export const DOMInit = () => {
   DOM = {
     container: document.querySelector('#view'),
     introView: document.querySelector('#introView'),
-    header: document.querySelector('#header'),
 
     todoListBox: document.querySelector('#todoList'),
-    formTodo: document.querySelector('#formTodo'),
+    formTasks: document.querySelector('#formTasks'),
 
     formAddInput: document.querySelector('#formAddInput'),
     searchInput: document.querySelector('#searchInput'),
 
     todoFormEdit: document.querySelector('#todoFormEdit'),
-    todoContentEl: document.querySelector('#todoContent'),
+    todoContentEl: document.querySelector('#itemTitle'),
     todoMdContentPreview: document.querySelector('#todoMarkdownPreview'),
     todoMarkdownContent: document.querySelector('#todoMarkdownContent'),
 
@@ -23,13 +22,13 @@ export const DOMInit = () => {
     markdownBtn: document.querySelector('#markdownBtn'),
     markdownPreviewBtn: document.querySelector('#markDownPreviewBtn'),
     editorPreviewBtn: document.querySelector('#editorPreviewBtn'),
-    todoListBtn: document.querySelector('#todoListBtn'),
 
-    feedback: document.querySelector('#feedback'),
-    feedbackEditHeadline: document.querySelector('#feedback-edit-headline')
+    feedbackAddFrom: document.querySelector('#feedback'),
+    feedbackEditTitle: document.querySelector('#feedbackEditTitle')
   };
 };
 
-const get = () => DOM;
-
+const get = () => {
+  return !DOMInit() ? DOM : DOMInit();
+};
 export default get;
