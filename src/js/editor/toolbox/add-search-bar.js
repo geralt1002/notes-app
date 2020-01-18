@@ -9,7 +9,6 @@ export function initAdd() {
     e.preventDefault();
 
     const addInput = DOM().formAddInput.value.trim();
-
     if (addInput && addInput.length < 12) {
       client
         .add(addInput)
