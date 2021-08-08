@@ -7,7 +7,7 @@
     "clean": "rimraf dist && mkdirp dist",
     "dev": "webpack serve --progress --env dev --config webpack.dev.js",
     "build": "webpack --progress --env prod --config webpack.prod.js",
-    "api": "json-server --watch api/db.json  --port 8001"
+    "api": "json-server --watch ./db.json  --port 8001"
   },
   "author": "",
   "license": "ISC",
