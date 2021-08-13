@@ -2,14 +2,14 @@
   "name": "to-do",
   "version": "1.0.0",
   "description": "",
-  "engines" : { 
-     "node" : ">=16.6.x" 
-   },
+  "engines": {
+    "node": ">=16.6.x"
+  },
   "main": "webpack.config.js",
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",
     "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
-    "dev": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
+    "start": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
     "api": "json-server --watch ./db.json  --port 8001"
   },
   "author": "",
