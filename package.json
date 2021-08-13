@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",
     "dev": "webpack serve --progress --env dev --config webpack.dev.js",
-    "build": "webpack  prod --config webpack.prod.js",
+    "build": "webpack  --config webpack.prod.js",
     "api": "json-server --watch ./db.json  --port 8001"
   },
   "author": "",
