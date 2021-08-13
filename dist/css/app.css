@@ -1,0 +1,582 @@
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
+  \********************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=latin-ext);
+/*!************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss (1) ***!
+  \************************************************************************************************************************************************************/
+/************GOOGLE_FONTS_IMPORT***************************/
+/*BG-variable*/
+/*Font variable*/
+/*RWD*/
+/***************RWD_MIXINS******************/
+/*BG-variable*/
+/*Font variable*/
+/*RWD*/
+/*****************ROOT***********************/
+*,
+*::before,
+*::after {
+  font-family: "PT Mono", monospace;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+:root {
+  font-size: 12px;
+}
+
+body {
+  width: 95%;
+  background: #000;
+  margin: auto;
+  color: #ffffff;
+  font-size: 2rem;
+}
+body a {
+  color: #ba4b01;
+}
+body a:hover {
+  text-decoration: underline;
+}
+body a:visited {
+  color: #943c01;
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+  :root {
+    font-size: 0.6666666667rem;
+  }
+
+  .toolbar {
+    width: auto;
+  }
+  .toolbar .form_toolbar--grid .feedback_input--add {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .toolbar .form_toolbar--grid .form_input_task {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .toolbar .form_toolbar--grid .btn_btn--submit {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    border: none;
+  }
+
+  .main_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .main_content .container_note_app .btn--view-flex {
+    width: 100%;
+  }
+  .main_content .form_editor {
+    width: 100%;
+    margin: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor .btn_btn--save {
+    width: 100%;
+  }
+  .main_content .section_note_list {
+    width: 100%;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    font-size: 0.6666666667rem;
+  }
+
+  .toolbar {
+    width: 100%;
+  }
+  .toolbar .form_toolbar--grid .feedback_input--add {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .toolbar .form_toolbar--grid .form_input_task {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .toolbar .form_toolbar--grid .btn_btn--submit {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    border: none;
+  }
+
+  .main_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .main_content .container_note_app .btn--view-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor {
+    width: 100%;
+    margin: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor .btn_btn--save {
+    width: 100%;
+  }
+  .main_content .section_note_list {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    font-size: 0.6666666667rem;
+  }
+
+  .toolbar {
+    width: 100%;
+  }
+  .toolbar .form_toolbar--grid .feedback_input--add {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .toolbar .form_toolbar--grid .form_input_task {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .toolbar .form_toolbar--grid .btn_btn--submit {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    border: none;
+  }
+
+  .main_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .main_content .container_note_app .btn--view-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor {
+    width: 100%;
+    margin: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor .btn_btn--save {
+    width: 100%;
+  }
+  .main_content .section_note_list {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .toolbar {
+    width: 100%;
+  }
+  .toolbar .form_toolbar--grid .feedback_input--add {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .toolbar .form_toolbar--grid .form_input_task {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .toolbar .form_toolbar--grid .btn_btn--submit {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    border: none;
+  }
+
+  .main_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .main_content .container_note_app .btn--view-flex {
+    width: 100%;
+  }
+  .main_content .form_editor {
+    width: 100%;
+    margin: 0;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main_content .form_editor .btn_btn--save {
+    width: 100%;
+  }
+  .main_content .section_note_list {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .toolbar {
+    width: 100%;
+  }
+  .toolbar .form_toolbar--grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.page_header {
+  list-style-position: inside;
+  margin: auto;
+  text-align: center;
+}
+.page_header .none {
+  display: none;
+}
+.page_header .feedback_input--add {
+  background: #ae0c0c;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+
+.page_main {
+  background: #363636;
+  /***************EDITOR***************************/
+}
+.page_main .main_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+.page_main .main_content .container_note_app {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 100%;
+}
+.page_main .main_content .container_note_app .none {
+  display: none;
+}
+
+.page_footer {
+  width: 100%;
+  text-align: center;
+}
+
+/*********************SEARCH & ADD PANEL*********************/
+.form_toolbar--grid {
+  background: #ba4b01;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  grid-gap: 1rem;
+}
+.form_toolbar--grid .none {
+  display: none;
+}
+.form_toolbar--grid .form_input_task {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ba4b01;
+}
+.form_toolbar--grid .form_input_task .form_label {
+  padding: 1.5rem;
+  margin: 0.5rem;
+  border-bottom: solid 0.1rem #fff;
+}
+.form_toolbar--grid .form_input_task .form_input_element {
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1.5rem;
+  color: #fff;
+  background: #ba4b01;
+  padding: 1rem;
+  margin: 1.5rem;
+}
+.form_toolbar--grid .form_input_task .form_input_element:focus {
+  background: #943c01;
+  border-bottom: 1px solid #fff;
+}
+.form_toolbar--grid .form_input_task .form_input_element::-webkit-input-placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+.form_toolbar--grid .form_input_task .form_input_element::-moz-placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+.form_toolbar--grid .form_input_task .form_input_element:-ms-input-placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+.form_toolbar--grid .form_input_task .form_input_element::-ms-input-placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+.form_toolbar--grid .form_input_task .form_input_element::placeholder {
+  color: #bbbbbb;
+  opacity: 1;
+}
+
+/**********EDIT BODY AND TITLE SINGLE ITEM**********************/
+.form_editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+.form_editor .none {
+  display: none;
+}
+.form_editor .item_title {
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1.5rem;
+  color: #fff;
+  background: #363636;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-weight: 600;
+  resize: none;
+  width: 95%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  max-height: 4.5rem;
+}
+.form_editor .item_title:focus {
+  scroll-margin: 0;
+  scroll-padding: 0;
+  overflow: none;
+  background: #4f4f4f;
+}
+.form_editor .feedback_input-add {
+  background: #ae0c0c;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+.form_editor .item_markdown_content {
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1.5rem;
+  color: #fff;
+  background: #363636;
+  border: 1px solid #ffffff;
+  width: 95%;
+  resize: none;
+  height: 30rem;
+  font-weight: 600;
+  text-shadow: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.form_editor .item_markdown_content:focus {
+  background: #4f4f4f;
+}
+.form_editor .item_markdown-preview {
+  border: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1.5rem;
+  color: #fff;
+  background: #363636;
+  width: 95%;
+  padding: 1.2rem;
+  margin: 1.5rem;
+  border-top: 0.1rem solid #ffffff;
+  border-bottom: 0.1rem solid #ffffff;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.section_note_list {
+  width: 30%;
+}
+.section_note_list .todo_list_item {
+  padding: 0.2rem;
+  margin: 1.2rem;
+}
+.section_note_list .todo_list_item .list_item--link {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+.section_note_list .todo_list_item .list_item--link .list_item {
+  font-size: 2rem;
+  background: #ba4b01;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0.4rem;
+  border: #ba4b01 0.1rem solid;
+  border-radius: 3rem;
+}
+.section_note_list .todo_list_item .list_item--link .item_headline {
+  padding: 0.2rem;
+  margin: 1.2rem;
+}
+
+.btn_btn--submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-style: hidden solid hidden solid;
+  border-width: 0.1rem;
+  border-color: #fff;
+}
+.btn_btn--submit .btn {
+  background: #d85803;
+  padding: 1rem;
+  margin: 1.5rem;
+  width: 20rem;
+  font-size: 2rem;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn_btn--submit .btn:hover {
+  background: #ba4b01;
+  border: solid 1px #fff;
+}
+
+.btn--view-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.btn--view-flex .btn_btn_mdpreview,
+.btn--view-flex .btn_btn_mdeditor {
+  background: #d85803;
+  padding: 1rem;
+  margin: 1.5rem;
+  width: 20rem;
+  font-size: 2rem;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn--view-flex .btn_btn_mdpreview:hover,
+.btn--view-flex .btn_btn_mdeditor:hover {
+  background: #ba4b01;
+  border: solid 1px #fff;
+}
+.btn--view-flex .btn_btn--focus {
+  border: 2px solid #fff;
+}
+
+.btn_btn--save {
+  background: #d85803;
+  padding: 1rem;
+  margin: 1.5rem;
+  width: 20rem;
+  font-size: 2rem;
+  color: #ffffff;
+  border: 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.btn_btn--save:hover {
+  background: #ba4b01;
+  border: solid 1px #fff;
+}
