@@ -17,8 +17,4 @@ $ npm install
 $ npm run dev
 
 ```
-and
-```
-$ npm run api
 
-```
