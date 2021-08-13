@@ -1,9 +1,10 @@
 import DOM from '../../dom';
+import page from 'page';
 import * as toolbox from './add-search-bar';
 import { normalize } from '../../tools';
 
 const generateTodoHTML = (item, currentId) => `
-  <a href="/appView/${item.id}" data-id="${
+  <a href="${page.base()}/appView/${item.id}" data-id="${
   item.id
 }" class="list_item--link" id="todo-text ${
   item.id === currentId ? 'active' : ''
