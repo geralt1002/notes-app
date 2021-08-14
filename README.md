@@ -1,4 +1,8 @@
 # Notes-app
+
+### Live: https://geralt1002.github.io/notes-deploy/
+
+
 ## Technologies: 
 - HTML
 - SCSS
