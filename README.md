@@ -1,6 +1,6 @@
 # Notes-app
 
-### Live: https://geralt1002.github.io/notes-deploy/
+### Live: https://geralt1002.github.io/notes-app/
 
 
 ## Technologies: 
