@@ -1,7 +1,7 @@
 import page from 'page';
 import * as routes from './routes';
 
-page.base('/dist');
+page.base('/notes-app');
 page('/', routes.appView);
 page('/appView', routes.appView);
 page('/appView/:id', routes.appView);

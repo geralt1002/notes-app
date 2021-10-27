@@ -52,77 +52,19 @@ module.exports = {
           }
         }
       }
-      // {
-      //   test: /\.(png|gif|jpe?g|svg)$/i,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         name: 'images/design/[name].[hash:6].[ext]',
-      //         publicPath: '../',
-      //         limit: environment.limits.images
-      //       }
-      //     }
-      //   ]
-      // },
-      // {
-      //   test: /\.(eot|ttf|woff|woff2)$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         name: 'fonts/[name].[hash:6].[ext]',
-      //         publicPath: '../',
-      //         limit: environment.limits.fonts
-      //       }
-      //     }
-      //   ]
-      // }
+
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-    //  new ImageMinimizerPlugin({
-    //    test: /\.(jpe?g|png|gif|svg)$/i,
-    //    minimizerOptions: {
-    //      // Lossless optimization with custom option
-    //      // Feel free to experiment with options for better result for you
-    //    //   plugins: [
-    //    //     ['gifsicle', { interlaced: true }],
-    //    //     ['jpegtran', { progressive: true }],
-    //    //     ['optipng', { optimizationLevel: 5 }],
-    //    //     [
-    //    //       'svgo',
-    //    //       {
-    //    //         plugins: extendDefaultPlugins([
-    //    //           {
-    //    //             name: 'removeViewBox',
-    //    //             active: false
-    //    //           }
-    //    //         ])
-    //    //       }
-    //    //     ]
-    //    //   ]
-    //    }
-    //  }),
+
     new CleanWebpackPlugin({
       verbose: true,
       cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json']
     })
-    //  new CopyWebpackPlugin({
-    //    patterns: [
-    //      {
-    //        from: path.resolve(environment.paths.source, 'images', 'content'),
-    //        to: path.resolve(environment.paths.output, 'images', 'content'),
-    //        toType: 'dir',
-    //        globOptions: {
-    //          ignore: ['*.DS_Store', 'Thumbs.db']
-    //        }
-    //      }
-    //    ]
-    //  })
+
   ].concat(htmlPluginEntries),
   target: 'web'
 };

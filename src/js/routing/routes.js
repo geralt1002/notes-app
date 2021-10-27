@@ -13,4 +13,7 @@ export const appView = context => {
   });
 };
 
-export const notFound = () => {};
+export const notFound = (context) => {
+  console.log(context);
+  console.log('NOT FOUND');
+};
