@@ -1,0 +1,185 @@
+@include smallerPhone {
+  :root {
+    font-size: $fontSize/3;
+  }
+  .toolbar {
+    width: auto;
+    .form_toolbar--grid {
+      .feedback_input--add {
+        order: 1;
+      }
+      .form_input_task {
+        order: 2;
+      }
+      .btn_btn--submit {
+        order: 3;
+        border: none;
+      }
+    }
+  }
+  .main_content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    .container_note_app {
+      .btn--view-flex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+    .form_editor {
+      width: 100%;
+      margin: 0;
+      align-content: center;
+      align-items: center;
+      .btn_btn--save {
+        width: 100%;
+      }
+    }
+    .section_note_list {
+      width: 100%;
+    }
+  }
+}
+@include mostPhone {
+  :root {
+    font-size: $fontSize/3;
+  }
+
+  .toolbar {
+    width: 100%;
+    .form_toolbar--grid {
+      .feedback_input--add {
+        order: 1;
+      }
+      .form_input_task {
+        order: 2;
+      }
+      .btn_btn--submit {
+        order: 3;
+        border: none;
+      }
+    }
+  }
+  .main_content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    .container_note_app {
+      .btn--view-flex {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+      }
+    }
+    .form_editor {
+      width: 100%;
+      margin: 0;
+      align-content: center;
+      align-items: center;
+      .btn_btn--save {
+        width: 100%;
+      }
+    }
+    .section_note_list {
+      width: 100%;
+    }
+  }
+}
+@include mostTablets {
+  :root {
+    font-size: $fontSize/3;
+  }
+  .toolbar {
+    width: 100%;
+    .form_toolbar--grid {
+      .feedback_input--add {
+        order: 1;
+      }
+      .form_input_task {
+        order: 2;
+      }
+      .btn_btn--submit {
+        order: 3;
+        border: none;
+      }
+    }
+  }
+  .main_content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    .container_note_app {
+      .btn--view-flex {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+      }
+    }
+    .form_editor {
+      width: 100%;
+      margin: 0;
+      align-content: center;
+      align-items: center;
+      .btn_btn--save {
+        width: 100%;
+      }
+    }
+    .section_note_list {
+      width: 100%;
+    }
+  }
+}
+@include smallerDesktop {
+  .toolbar {
+    width: 100%;
+    .form_toolbar--grid {
+      .feedback_input--add {
+        order: 1;
+      }
+      .form_input_task {
+        order: 2;
+      }
+      .btn_btn--submit {
+        order: 3;
+        border: none;
+      }
+    }
+  }
+  .main_content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    .container_note_app {
+      .btn--view-flex {
+        width: 100%;
+      }
+    }
+    .form_editor {
+      width: 100%;
+      margin: 0;
+      align-content: center;
+      align-items: center;
+      .btn_btn--save {
+        width: 100%;
+      }
+    }
+    .section_note_list {
+      width: 100%;
+    }
+  }
+}
+@include largeDevices {
+  .toolbar {
+    width: 100%;
+    .form_toolbar--grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

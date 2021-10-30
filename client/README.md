@@ -4,11 +4,11 @@
 
 ## Technologies:
 
--  Vue 3
--  SCSS
--  Node.js
--  Express
--  MongoDB
+- Vue 3
+- SCSS
+- Node.js
+- Express
+- MongoDB
 
 ## Setup
 
