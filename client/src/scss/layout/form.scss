@@ -61,9 +61,6 @@
       background: $BGfocus;
     }
   }
-  .feedback_input-add {
-    @include feedback;
-  }
   .item_markdown_content {
     @include input($bg: true);
     border: 1px solid #ffffff;

@@ -32,14 +32,19 @@
   margin: 1.2rem;
 }
 @mixin feedback {
-  background: #ae0c0c;
-  width: 60%;
-  margin: auto;
+  width: 95%;
+  font-size: 1.3rem;
+  border: 1px solid;
   padding: 1rem;
-  text-align: center;
-  align-content: center;
+  margin: 1.5rem auto;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #d8000c;
+  background-color: #ffbaba;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  font-weight: bold;
+  align-content: center;
 }
 
 /***************RWD_MIXINS******************/

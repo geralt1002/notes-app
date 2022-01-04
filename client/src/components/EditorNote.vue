@@ -11,8 +11,11 @@
         type="text"
         class="item_title"
         placeholder="Tytuł notatki..."
+        @keyup="$emit('validateEditTitle', $events)"
+        @blur="$emit('validateEditTitle', $events)"
         @input="event => $emit('update:singleNoteTitle', event.target.value)"
       ></textarea>
+      <span class="feedback_input-title" v-if="errorEditTitle">{{ errorEditTitle }}</span>
       <textarea
         :value="singleNoteDescription"
         class="item_markdown_content"
@@ -50,8 +53,18 @@ export default {
       type: String,
       required: true,
     },
+    errorEditTitle: {
+      type: String,
+      required: true,
+    },
   },
-  emits: ['update:singleNoteTitle', 'update:singleNoteDescription', 'pdf', 'save'],
+  emits: [
+    'update:singleNoteTitle',
+    'update:singleNoteDescription',
+    'pdf',
+    'save',
+    'validateEditTitle',
+  ],
 
   setup() {
     let isPreview = ref(false);

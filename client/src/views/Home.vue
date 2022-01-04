@@ -1,11 +1,5 @@
 <template>
   <header class="page_header">
-    <div v-if="feedbackAlert" class="feedback_input--add">
-      <p>
-        {{ feedbackAlert }}
-      </p>
-    </div>
-
     <h1>Notatnik</h1>
   </header>
   <main class="page_main">
@@ -14,6 +8,8 @@
       v-model:search="searchQuery"
       @addNote="addNote"
       @deleteNote="deleteNote(singleNoteId)"
+      :errorTitle="errorTitle"
+      @validateTitle="validateTitle"
     />
     <section class="main_content">
       <EditorNote
@@ -22,6 +18,8 @@
         :markdown="markdown"
         @pdf="exportToPDF"
         @save="save(singleNoteId)"
+        @validateEditTitle="validateEditTitle"
+        :errorEditTitle="errorEditTitle"
       />
       <NoteLists :notes="searchedNote" :get-note="getNote" />
     </section>
@@ -64,11 +62,27 @@ export default {
     const title = ref('');
     const description = ref('');
 
-    const feedbackAlert = computed(() => {
-      return title.value.length > 12 || singleNoteTitle.value.length > 12
-        ? 'Tytuł zadania nie może być dłuższy niż 12 znaków'
-        : '';
-    });
+    let errorTitle = ref('');
+
+    const validateTitle = () => {
+      errorTitle.value =
+        title.value === ''
+          ? 'Tytuł nie może być pusty'
+          : title.value.length > 12
+          ? 'Tytuł nie może przekraczać 12 znaków'
+          : '';
+    };
+
+    let errorEditTitle = ref('');
+
+    const validateEditTitle = () => {
+      errorEditTitle.value =
+        singleNoteTitle.value === ''
+          ? 'Tytuł nie może być pusty'
+          : singleNoteTitle.value.length > 12
+          ? 'Tytuł nie może przekraczać 12 znaków'
+          : '';
+    };
 
     // Get All
 
@@ -87,8 +101,8 @@ export default {
     // Add Note
 
     const addNote = async () => {
-      if (title.value.length > 12) {
-        title.value = '';
+      if (title.value === '' || title.value.length > 12) {
+        errorTitle.value = 'Tytuł nie może być pusty oraz nie może przekraczać 12 znaków';
       } else {
         services
           .addNote({
@@ -141,20 +155,24 @@ export default {
     // Save
 
     const save = async singleNoteId => {
-      await services
-        .updateNote(singleNoteId, {
-          title: singleNoteTitle.value,
-          description: singleNoteDescription.value,
-        })
-        .then(res => {
-          console.log(res);
-          router.go({
-            path: '/',
+      if (singleNoteTitle.value === '' || singleNoteTitle.value.length > 12) {
+        errorEditTitle.value = 'Tytuł nie może być pusty oraz nie może przekraczać 12 znaków';
+      } else {
+        await services
+          .updateNote(singleNoteId, {
+            title: singleNoteTitle.value,
+            description: singleNoteDescription.value,
+          })
+          .then(res => {
+            console.log(res);
+            router.go({
+              path: '/',
+            });
+          })
+          .catch(err => {
+            console.log(err);
           });
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      }
     };
 
     const markdown = computed(() => marked(singleNoteDescription.value));
@@ -220,7 +238,10 @@ export default {
       save,
       markdown,
       exportToPDF,
-      feedbackAlert,
+      errorTitle,
+      errorEditTitle,
+      validateTitle,
+      validateEditTitle,
     };
   },
 };

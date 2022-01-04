@@ -9,8 +9,12 @@
           name="formAddInput"
           class="add_input form_input_element"
           placeholder="np. Zadanie 1"
+          autocomplete="off"
+          @keyup="$emit('validateTitle', $events)"
+          @blur="$emit('validateTitle', $events)"
           @input="event => $emit('update:title', event.target.value)"
         />
+        <span class="feedback_input-title" v-if="errorTitle">{{ errorTitle }}</span>
       </div>
       <div class="btn_btn--submit">
         <button class="btn btn_btn--add" type="button" @click="$emit('addNote', $events)">
@@ -47,7 +51,11 @@ export default {
       type: String,
       required: true,
     },
+    errorTitle: {
+      type: String,
+      required: true,
+    },
   },
-  emits: ['update:search', 'update:title', 'addNote', 'deleteNote'],
+  emits: ['update:search', 'update:title', 'addNote', 'deleteNote', 'validateTitle'],
 };
 </script>
