@@ -4,11 +4,11 @@
 
 ## Technologies:
 
--  Vue 3
--  SCSS
--  Node.js
--  Express
--  MongoDB
+-   Vue 3
+-   SCSS
+-   Node.js
+-   Express
+-   MongoDB
 
 ## Setup
 
@@ -19,7 +19,7 @@ To run this project, install it locally using npm:
 ```
 $ cd server
 $ npm install
-$ npm run dev
+$ npm start
 
 ```
 
