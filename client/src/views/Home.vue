@@ -6,20 +6,20 @@
     <AddNote
       v-model:title="title"
       v-model:search="searchQuery"
-      @addNote="addNote"
-      @deleteNote="deleteNote(singleNoteId)"
-      :errorTitle="errorTitle"
-      @validateTitle="validateTitle"
+      :error-title="errorTitle"
+      @add-note="addNote"
+      @delete-note="deleteNote(singleNoteId)"
+      @validate-title="validateTitle"
     />
     <section class="main_content">
       <EditorNote
         v-model:singleNoteTitle="singleNoteTitle"
         v-model:singleNoteDescription="singleNoteDescription"
         :markdown="markdown"
+        :error-edit-title="errorEditTitle"
         @pdf="exportToPDF"
         @save="save(singleNoteId)"
-        @validateEditTitle="validateEditTitle"
-        :errorEditTitle="errorEditTitle"
+        @validate-edit-title="validateEditTitle"
       />
       <NoteLists :notes="searchedNote" :get-note="getNote" />
     </section>
@@ -33,7 +33,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-import marked from 'marked';
+import {marked} from 'marked';
 
 import pdfMake from 'pdfmake';
 import htmlToPdfmake from 'html-to-pdfmake';
@@ -46,7 +46,7 @@ import NoteLists from '../components/NoteLists.vue';
 import services from '../services/api_call';
 
 export default {
-  name: 'Home',
+  name: 'HomeView',
   components: {
     AddNote,
     EditorNote,

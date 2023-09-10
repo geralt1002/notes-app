@@ -15,7 +15,7 @@
         @blur="$emit('validateEditTitle', $events)"
         @input="event => $emit('update:singleNoteTitle', event.target.value)"
       ></textarea>
-      <span class="feedback_input-title" v-if="errorEditTitle">{{ errorEditTitle }}</span>
+      <span v-if="errorEditTitle" class="feedback_input-title">{{ errorEditTitle }}</span>
       <textarea
         :value="singleNoteDescription"
         class="item_markdown_content"
@@ -38,7 +38,7 @@
 import { ref } from 'vue';
 
 export default {
-  name: 'Edior',
+  name: 'EdiorNote',
 
   props: {
     singleNoteTitle: {

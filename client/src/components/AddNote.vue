@@ -14,7 +14,7 @@
           @blur="$emit('validateTitle', $events)"
           @input="event => $emit('update:title', event.target.value)"
         />
-        <span class="feedback_input-title" v-if="errorTitle">{{ errorTitle }}</span>
+        <span v-if="errorTitle" class="feedback_input-title">{{ errorTitle }}</span>
       </div>
       <div class="btn_btn--submit">
         <button class="btn btn_btn--add" type="button" @click="$emit('addNote', $events)">
@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: 'Add',
+  name: 'AddNote',
   props: {
     title: {
       type: String,
