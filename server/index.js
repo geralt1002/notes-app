@@ -12,6 +12,8 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
+mongoose.set("strictQuery", false);
+
 const db = mongoose.connect("mongodb://localhost:27017/notes-app", console.log("Connection db Success"));
 const Note = require("./models/note");
 

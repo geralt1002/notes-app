@@ -1,6 +1,6 @@
 # Notes-app
 
-### [Live](https://simple-notesapp.herokuapp.com/)
+### [Live](https://notesapp-v1mo.onrender.com/)
 
 ## Technologies:
 
