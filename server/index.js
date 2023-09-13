@@ -5,7 +5,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 
-dotenv.config();
+dotenv.config({ path: __dirname + "/.env" });
 
 const app = express();
 app.use(morgan("combined"));
@@ -14,7 +14,7 @@ app.use(cors());
 
 mongoose.set("strictQuery", false);
 
-const db = mongoose.connect("mongodb://localhost:27017/notes-app", console.log("Connection db Success"));
+const db = mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/notes-app", console.log("Connection db Success"));
 const Note = require("./models/note");
 
 app.get("/notes", (req, res) => {
