@@ -1,6 +1,6 @@
 # Notes-app
 
-### [Live](https://notesapp-v1mo.onrender.com/)
+### [Live](https://notes-app-k7v6.onrender.com/)
 
 ## Technologies:
 
